@@ -1,0 +1,11 @@
+button {
+    margin-bottom: 5px;
+}
+
+button:last-child {
+    margin-bottom: 0;
+}
+
+.list-group-item {
+    cursor: pointer;
+}
