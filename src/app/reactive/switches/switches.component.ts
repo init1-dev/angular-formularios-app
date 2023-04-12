@@ -32,7 +32,7 @@ export class SwitchesComponent implements OnInit {
     //   console.log(newValue);
     //  })
 
-     this.miFormulario.valueChanges.subscribe( ({ condiciones, ...form }) => {
+     this.miFormulario.valueChanges.subscribe( ({ terminos, ...form }) => {
       this.persona = form;
      })
   }
