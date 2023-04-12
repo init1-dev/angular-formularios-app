@@ -1,0 +1,119 @@
+<h2>Validaciones reactivas</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+
+        <form autocomplete="off"
+              [formGroup]="miFormulario"
+              (ngSubmit)="submitFormulario()">
+            
+            <!-- Nombre -->
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Nombre</label>
+                <div class="col-sm-9">
+                        
+                    <input type="text"
+                            class="form-control"
+                            placeholder="Nombre del usuario"
+                            formControlName="nombre">
+
+                    <span class="form-text text-danger"
+                          *ngIf="inputCheck('nombre')">
+                        Debe ser en formato de nombre y apellidos
+                    </span>
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Email</label>
+                <div class="col-sm-9">
+                    <input type="email"
+                           class="form-control"
+                           placeholder="Email del usuario"
+                           formControlName="email">
+                    <span class="form-text text-danger"
+                          *ngIf="inputCheck('email')">
+                        {{ emailErrorMsg }}
+                     </span>
+                </div>
+            </div>
+
+            <!-- Username -->
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Username</label>
+
+                <div class="col-sm-9">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">@</span>
+                        <input type="text"
+                               class="form-control"
+                               placeholder="Nombre clave del usuario"
+                               formControlName="username">
+                    </div>
+                    <span class="form-text text-danger"
+                            *ngIf="inputCheck('username')">
+                        Username inválido
+                    </span>
+                </div>
+            </div>
+
+            <!-- Password -->
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Password</label>
+                <div class="col-sm-9">
+                    <input type="password"
+                           class="form-control"
+                           placeholder="Contraseña"
+                           autocomplete="new-password"
+                           formControlName="password">
+                    <span class="form-text text-danger"
+                          *ngIf="inputCheck('password')">
+                        La contraseña debe tener al menos 6 caracteres.
+                   </span>
+                </div>
+            </div>
+
+            <!-- Password 2 -->
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Confirmar</label>
+                <div class="col-sm-9">
+                    <input type="password"
+                           class="form-control"
+                           placeholder="Confirmar contraseña"
+                           formControlName="password2">
+                    <span class="form-text text-danger"
+                          *ngIf="inputCheck('password2')">
+                        Las contraseñas deben ser iguales.
+                    </span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <button type="submit"
+                            class="btn btn-primary float-end"
+                            [disabled]="miFormulario.pending">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+<span class="mb-5">
+    <p><i>json-server --watch db.json</i></p>
+</span>
+
+<pre><h4>Valid:</h4>{{ miFormulario.valid | json }}</pre>
+<pre><h4>Status:</h4>{{ miFormulario.status | json }}</pre>
+<pre><h4>Form errors:</h4>{{ miFormulario.errors | json }}</pre>
+<!-- <pre><h4>nombre:</h4>{{ miFormulario.controls['nombre'].errors | json }}</pre> -->
+<pre><h4>nombre:</h4>{{ miFormulario.controls['username'].errors | json }}</pre>
+<pre><h4>email:</h4>{{ miFormulario.controls['email'].errors | json }}</pre>
+<pre><h4>Password:</h4>{{ miFormulario.controls['password'].errors | json }}</pre>
+<pre><h4>Confirmar:</h4>{{ miFormulario.controls['password2'].errors | json }}</pre>
