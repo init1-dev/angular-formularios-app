@@ -15,6 +15,10 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule )
   },
   {
+    path: 'selectores',
+    loadChildren: () => import('./selectores/selectores.module').then( m => m.SelectoresModule )
+  },
+  {
     path: '**',
     redirectTo: 'template'
   }

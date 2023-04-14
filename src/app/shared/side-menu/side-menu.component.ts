@@ -53,4 +53,11 @@ export class SideMenuComponent {
     }
   ]
 
+  selectoresMenu: menuItem[] = [
+    {
+      texto: 'Selectores',
+      ruta: './selectores/countries'
+    }
+  ]
+
 }

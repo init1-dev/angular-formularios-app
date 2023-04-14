@@ -1,33 +1,87 @@
-<h2>Template</h2>
-<hr>
-<ul class="list-group">
-    <!-- routerLink="{{ item.ruta }}" ó [routerLink]="[ item.ruta ]" -->
-    <li class="list-group-item"
-        routerLink="{{ item.ruta }}"
-        *ngFor="let item of templateMenu"
-        routerLinkActive="active">
-        {{ item.texto }}
-    </li>
-</ul>
 
-<h2 class="mt-3">Reactive</h2>
-<hr>
-<ul class="list-group">
-    <li class="list-group-item"
-        routerLink="{{ item.ruta }}"
-        *ngFor="let item of reactiveMenu"
-        routerLinkActive="active">
-        {{ item.texto }}
-    </li>
-</ul>
+<div class="accordion" id="accordion">
+    <!-- TEMPLATE -->
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTemplate" aria-expanded="true" aria-controls="collapseTemplate">
+                Template
+            </button>
+        </h2>
+        <div id="collapseTemplate" class="accordion-collapse collapse" data-bs-parent="#accordion">
+            <div class="accordion-body">
+                <ul class="list-group">
+                    <!-- routerLink="{{ item.ruta }}" ó [routerLink]="[ item.ruta ]" -->
+                    <li class="list-group-item"
+                        routerLink="{{ item.ruta }}"
+                        *ngFor="let item of templateMenu"
+                        routerLinkActive="active">
+                        {{ item.texto }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-<h2 class="mt-3">Validaciones</h2>
-<hr>
-<ul class="list-group">
-    <li class="list-group-item"
-        routerLink="{{ item.ruta }}"
-        *ngFor="let item of authMenu"
-        routerLinkActive="active">
-        {{ item.texto }}
-    </li>
-</ul>
+    <!-- REACTIVE -->
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseReactive" aria-expanded="true" aria-controls="collapseReactive">
+                Reactive
+            </button>
+        </h2>
+        <div id="collapseReactive" class="accordion-collapse collapse" data-bs-parent="#accordion">
+            <div class="accordion-body">
+                <ul class="list-group">
+                    <li class="list-group-item"
+                        routerLink="{{ item.ruta }}"
+                        *ngFor="let item of reactiveMenu"
+                        routerLinkActive="active">
+                        {{ item.texto }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- VALIDACIONES -->
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVal" aria-expanded="true" aria-controls="collapseVal">
+                Validaciones
+            </button>
+        </h2>
+        <div id="collapseVal" class="accordion-collapse collapse" data-bs-parent="#accordion">
+            <div class="accordion-body">
+                <ul class="list-group">
+                    <li class="list-group-item"
+                        routerLink="{{ item.ruta }}"
+                        *ngFor="let item of authMenu"
+                        routerLinkActive="active">
+                        {{ item.texto }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- SELECTORES -->
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSelectores" aria-expanded="true" aria-controls="collapseSelectores">
+                Selectores
+            </button>
+        </h2>
+        <div id="collapseSelectores" class="accordion-collapse collapse show" data-bs-parent="#accordion">
+            <div class="accordion-body">
+                <ul class="list-group">
+                    <li class="list-group-item"
+                        routerLink="{{ item.ruta }}"
+                        *ngFor="let item of selectoresMenu"
+                        routerLinkActive="active">
+                        {{ item.texto }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
